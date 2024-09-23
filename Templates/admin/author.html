@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+    {{bookapp.form.as_p}}
+
+    <input type="submit" value="SAVE">
+
+{% endblock %}

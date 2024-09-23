@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=OjhsERc4VNlN90_DaE78TKq83_FdyuI5LL-CeGTZhdWZ-yvX_GkzxsMg8NyZEAjMnW1qltzFj_ltZurmRfLahoJ02WCPtNFWitjdTduli4bfHQALuFD-TRz880a8MiyFQyHY_TqJGbUWhkxrHc11tenMqf06FpYifxShvnurNH_Q6z3V4JdctOIVDaQ9NoDT" charset="UTF-8"></script></head>
+<body>
+<h1>Welcome to your cart {{Cart.username}}</h1>
+  {% if not cart_items %}
+
+  <p>Your cart is empty</p>
+
+  {% else %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in cart_items %}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ item.book.title }}</td>
+        <td>{{ item.book.author }}</td>
+        <td>{{ item.book.price }}</td>
+        <td><a href="{% url 'remove_item' item.id %}">Remove</a></td>
+        {% if item.quantity <= item.book.quantity%}
+
+          <td><a href="{% url 'decrease_quantity' item.id %}">-</a></td>
+          <td><input type="number" name="quantity" value="{{item.quantity}}"></td>
+
+          <td><a href="{% url 'increase_quantity' item.id %}">+</a></td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif%}
+
+
+</body>
+</html>

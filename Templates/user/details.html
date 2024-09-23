@@ -1,0 +1,17 @@
+{% extends 'user/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--use bootstrap to design the page-->
+<h1>Book Detail</h1>
+
+<div class="card" style="width: 18 rem;">
+    <img src="{{ book.image.url }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="card-text">{{book.title}} </p>
+        <p>{{book.price}}</p>
+    </div>
+</div>
+
+
+{% endblock %}
