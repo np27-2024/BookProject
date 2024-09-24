@@ -1,0 +1,11 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+
+            <h3>Welcome To My Webpage</h3>
+  <a href="{% url 'register'%}" class="btn btn-primary">Please Register </a>
+   <p> If you have already registered Please Login <a href="{% url 'login'%}" >here</a></p>
+
+{% endblock %}
+

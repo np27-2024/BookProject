@@ -3,7 +3,7 @@ from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
+from django.contrib.auth.decorators import login_required
 from bookapp.models import Book
 from userbookapp.models import Cart, CartItem
 import stripe
@@ -54,6 +54,7 @@ def User_search(request):
     return render(request, 'user/search.html', context)
 
 
+@login_required()
 def add_to_cart(request, book_id):
     book = Book.objects.get(id=book_id)
 

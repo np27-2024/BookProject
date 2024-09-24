@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xr^8e&lk@01tf($+#+4ey-=v!&-g7c%351j3(2(=&oi@5ui+$s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [np27.pythonanywhere.com]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookapp',
     'userbookapp',
+    'accounts',
 
 ]
 
@@ -125,3 +126,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_SECRET_KEY = 'sk_test_51PlBGQRrodPVR7UW3m05P3kBd8f5BNLpbIDtT5LU6hpnmwYXLfzD8kva0dq7ld4xJrDT6WO1whcXYhjZ3gPLMu6J00elHgD1R5'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51PlBGQRrodPVR7UW4Q0xXzXk3g9Kow8bJp77hA5zvnjxn5zO8j0dJQXsO10UF3JCipz059z600Y0VHT57MQSwkxN0012Yf9CKB'
+
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = 'user/'

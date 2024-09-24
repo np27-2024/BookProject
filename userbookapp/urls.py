@@ -3,7 +3,7 @@ from userbookapp import views
 
 urlpatterns = [
 
-    path("", views.UserlistBook, name='User_list_view'),
+    path("user", views.UserlistBook, name='User_list_view'),
     path("userdetails/<int:book_id>/", views.UserdetailsView, name='User_book_details'),
     path('userindex/', views.User_index),
     path('usersearch/', views.User_search, name='User_search_view'),
